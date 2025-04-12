@@ -56,6 +56,10 @@ directive
     | macro
     | text
     | number
+     // 🆕 Added to support parsing of ByteSize literals (e.g. 100kb, 2.5mb)
+    | BYTE_SIZE
+     // 🆕 Added to support parsing of TimeDuration literals (e.g. 10ms, 2.5min)
+    | TIME_DURATION
     | bool
     | column
     | colList
@@ -311,3 +315,21 @@ fragment Int
 fragment Digit
  : [0-9]
  ;
+ // 🆕 Rule: BYTE_SIZE for values like 2.5mb, 100kb, etc.
+BYTE_SIZE
+  : Digit+ ('.' Digit+)? BYTE_UNIT
+  ;
+// 🆕 Rule: TIME_DURATION for values like 2s, 10ms, 1.5minutes, etc.
+TIME_DURATION
+  : Digit+ ('.' Digit+)? TIME_UNIT
+  ;
+
+// 🆕 Byte unit options: kb, mb, gb (case-insensitive)
+fragment BYTE_UNIT
+  : [kK][bB] | [mM][bB] | [gG][bB]
+  ;
+// 🆕 Time unit options: ms, sec, min, etc.
+fragment TIME_UNIT
+  : 'ms' | 's' | 'sec' | 'seconds' | 'm' | 'min' | 'minutes'
+  ;
+ 
