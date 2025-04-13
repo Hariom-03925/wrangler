@@ -1,0 +1,29 @@
+Prompt 1:
+What is the best way to structure ANTLR grammar rules for parsing data size (like "10MB") and time duration (like "500ms") in a directive-based DSL?
+
+Prompt 2:
+Can you guide me on implementing a reusable Java class for parsing and converting ByteSize strings into long values in bytes?
+
+Prompt 3:
+How should I create a similar parser for time durations like "2s", "1500ms", etc., using a clean and scalable approach in Java?
+
+Prompt 4:
+What's the most efficient and modular way to extend CDAP Wrangler’s Token system to support custom types like BYTE_SIZE and TIME_DURATION?
+
+Prompt 5:
+How do I properly connect new grammar rules (e.g., byteSizeArg, timeDurationArg) to the visitor pattern used in Wrangler’s RecipeVisitor class?
+
+Prompt 6:
+What would be the correct way to implement a new directive in Wrangler that can handle aggregation logic over size and time fields?
+
+Prompt 7:
+How can I make sure the aggregation logic I implement uses consistent conversion (e.g., converting KB/MB to bytes, seconds/milliseconds to ms)?
+
+Prompt 8:
+Can you suggest a good structure for a unit test that validates total aggregation of byte size and time duration fields in Wrangler?
+
+Prompt 9:
+How should I assert floating-point values like total MB and seconds in JUnit to avoid precision issues?
+
+Prompt 10:
+What are the best practices for writing a clean, concise, and professional README section to document new directive usage?

@@ -216,3 +216,13 @@ Cask is a trademark of Cask Data, Inc. All rights reserved.
 
 Apache, Apache HBase, and HBase are trademarks of The Apache Software Foundation. Used with
 permission. No endorsement by The Apache Software Foundation is implied by the use of these marks.
+
+## ByteSize and TimeDuration Support
+
+Wrangler now supports parsing of data size (e.g., 10KB, 5MB) and time duration (e.g., 500ms, 2s) natively.
+
+### New Directive: aggregate-stats
+
+```wrangler
+aggregate-stats :data_transfer_size :response_time total_size_mb total_time_sec
+
